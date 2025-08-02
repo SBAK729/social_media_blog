@@ -1,0 +1,23 @@
+[Blog Structure]
+A well-structured blog post includes a compelling title, a strong intro, clear subheadings, concise paragraphs, and a call-to-action.
+
+[SEO Best Practices]
+Include your primary keyword in the title, introduction, and headings. Use short paragraphs. Write a meta description under 160 characters that summarizes the post.
+
+[Tone Guidelines]
+Professional tone is best for LinkedIn. Witty and informal works well on Twitter or Medium for developer audiences. Choose tone based on platform and target readers.
+
+[Platform Specifics]
+LinkedIn prefers insights, professional case studies, and practical tips. Twitter demands concise, punchy, and visual content. Medium values stories, guides, and reflective writing.
+
+[Audience Targeting]
+For beginner developers: explain concepts simply. For professionals: use examples, data, and advanced insights. For execs: keep it high-level with business impact.
+
+[Content Quality]
+Maintain clarity and logical flow. Avoid jargon. Add bullet points, numbered lists, or code snippets for developer content. Proofread thoroughly.
+
+[Writing Process]
+Start with a researched trend. Then outline → write → edit → summarize. Use tools like RAG to bring in relevant knowledge dynamically.
+
+[Personalization]
+Adjust tone, structure, and depth depending on user preference (e.g. professional, witty, beginner-friendly). Store and recall these preferences if needed.
