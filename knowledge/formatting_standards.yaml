@@ -1,0 +1,113 @@
+platforms:
+  medium:
+    ideal_post_length: "700–1000 words"
+    heading_structure:
+      h2: "Main sections"
+      h3: "Subsections under each H2"
+    paragraph:
+      max_length: 150
+      line_break_after: true
+    cta:
+      position: "Final paragraph"
+      include: true
+    code:
+      usage: "Only when necessary"
+      format: "Plaintext or external link to repo"
+    image_rules:
+      required: true
+      max_images: 2
+      placement: "Header or 1 per 500 words"
+      captioning: true
+    title_rules:
+      max_length: 60
+      must_include: ["main keyword"]
+      style: "Actionable or curiosity-driven"
+    lists:
+      use_bullets: true
+      max_items_per_list: 5
+      tone: "Concise and value-packed"
+    hashtags:
+      use: false
+    links:
+      include_external: true
+      max_links: 3
+      citation_style: "Inline or at bottom"
+    tone_defaults:
+      - professional
+      - conversational
+
+  devto:
+    ideal_post_length: "800–1200 words"
+    heading_structure:
+      h2: "Main logical blocks"
+      h3: "Optional: for breaking down code examples"
+    paragraph:
+      max_length: 180
+      line_break_after: false
+    cta:
+      position: "Middle or end"
+      include: true
+    code:
+      usage: "Frequent"
+      format: "Markdown fenced code blocks"
+    image_rules:
+      required: false
+      max_images: 1
+      placement: "Optional header"
+      captioning: false
+    title_rules:
+      max_length: 70
+      must_include: ["topic keyword"]
+      style: "Straightforward or developer-focused"
+    lists:
+      use_bullets: true
+      max_items_per_list: 7
+      tone: "Helpful, technical"
+    hashtags:
+      use: true
+      count: 3
+    links:
+      include_external: true
+      max_links: 5
+      citation_style: "Footnote or inline"
+    tone_defaults:
+      - technical
+      - informative
+
+  tumblr:
+    ideal_post_length: "300–500 words"
+    heading_structure:
+      h2: "Optional"
+      h3: "Avoid unless needed"
+    paragraph:
+      max_length: 100
+      line_break_after: true
+    cta:
+      position: "First or last paragraph"
+      include: true
+    code:
+      usage: "Rare"
+      format: "Plaintext or link to gist"
+    image_rules:
+      required: true
+      max_images: 3
+      placement: "Anywhere"
+      captioning: false
+    title_rules:
+      max_length: 50
+      must_include: []
+      style: "Casual, memeable, or emotional hook"
+    lists:
+      use_bullets: false
+      max_items_per_list: 3
+      tone: "Quirky, conversational"
+    hashtags:
+      use: true
+      count: 5
+    links:
+      include_external: false
+      max_links: 1
+      citation_style: "Avoid unless essential"
+    tone_defaults:
+      - casual
+      - witty
