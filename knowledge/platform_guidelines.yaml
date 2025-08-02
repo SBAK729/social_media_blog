@@ -1,0 +1,14 @@
+platforms:
+  medium:
+    ideal_length: "5 to 7 minutes read (700-1000 words)"
+    formatting: "Use H2/H3 for subheadings, include 1-2 images, avoid bullet spam"
+    tone_defaults: ["professional", "conversational"]
+    headline_rules: "Max 60 characters, use action verbs"
+  devto:
+    ideal_length: "Technical depth, 800-1200 words"
+    formatting: "Use code blocks with markdown, bullet concise key points"
+    tone_defaults: ["technical", "informative"]
+  tumblr:
+    ideal_length: "300-500 words"
+    formatting: "Casual tone, meme-friendly, use hashtags"
+    tone_defaults: ["casual", "witty"]
