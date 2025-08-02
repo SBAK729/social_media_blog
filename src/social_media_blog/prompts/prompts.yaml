@@ -1,0 +1,54 @@
+prompts:
+  trend_hunter:
+    template: |
+      Your task is to research trending blog topics in the domain of "{{ topic }}".
+      Follow these steps:
+      1. Scan recent content trends from developer communities, tech blogs, X (Twitter), HackerNews, or Reddit.
+      2. Choose a blog topic that is:
+         - Timely
+         - Aligned with platform tone: {{ tone }}
+         - Likely to perform well in shares or search
+
+      Return:
+      - A blog topic title
+      - A 1-2 sentence justification for its relevance
+
+  writer:
+    template: |
+      Write a detailed blog article (approx. 800-1000 words) on the topic: "{{ topic }}".
+      Guidelines:
+      - Tone: {{ tone }}
+      - Audience: {{ audience }}
+      - Format:
+        - Title
+        - Introduction (100-150 words)
+        - 2-3 Subheadings with body content
+        - Conclusion or CTA
+
+      Style guide:
+      - Keep paragraphs short
+      - Use bullets where helpful
+      - Maintain a narrative voice aligned to the platform (e.g., Medium: informative but informal)
+
+  editor:
+    template: |
+      Edit the following blog draft for:
+      - Tone and clarity ({{ tone }})
+      - Platform fit ({{ platform }})
+      - Grammar, conciseness, and logical flow
+
+      Highlight improvements in:
+      - Title strength
+      - Hook in introduction
+      - Cohesion between sections
+
+      Return the revised blog as a final draft.
+
+  summarizer:
+    template: |
+      Summarize the blog post into:
+      - Meta description (max 160 chars)
+      - TL;DR (max 280 chars)
+      - Optional: 3-5 relevant hashtags
+
+      Ensure clarity, keyword alignment, and SEO friendliness.
