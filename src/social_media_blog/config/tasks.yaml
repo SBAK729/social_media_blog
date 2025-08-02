@@ -1,0 +1,24 @@
+tasks:
+  - agent_id: trend_hunter
+    description: >
+      Research trending blog topics in the domain of '{{ topic }}'. Select one that’s highly engaging and current.
+    expected_output: >
+      A single blog topic title and a 1–2 sentence explanation of why it’s trending and relevant.
+
+  - agent_id: writer
+    description: >
+      Write a full blog post (approx. 800 words) based on the topic identified. Use structured sections: intro, main body with subheadings, and a strong conclusion.
+    expected_output: >
+      A complete blog article (~800–1000 words), formatted with a title, intro, subheadings, and a conclusion.
+
+  - agent_id: editor
+    description: >
+      Edit the blog draft for tone, clarity, grammar, and flow. Ensure it’s ready for publication on Medium or similar platforms.
+    expected_output: >
+      A polished final blog post with improved flow, tone, grammar, and structure. Optimized for Medium.
+
+  - agent_id: summarizer
+    description: >
+      Summarize the blog in 2–3 lines. Create a TL;DR and SEO-friendly meta description.
+    expected_output: >
+      Meta description (max 160 characters), TL;DR (max 280 characters), and 3–5 relevant hashtags.
