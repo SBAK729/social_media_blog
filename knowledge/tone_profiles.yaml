@@ -1,0 +1,10 @@
+tones:
+  professional:
+    structure: "Formal intros, well-cited content, third-person"
+    vocab: "Accurate, industry-standard language"
+  witty:
+    structure: "Conversational flow, short sentences"
+    vocab: "Humor, memes, casual slang"
+  inspirational:
+    structure: "Emotive openers, motivational hooks"
+    vocab: "Uplifting, story-driven tone"
