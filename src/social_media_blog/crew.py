@@ -1,8 +1,8 @@
 import os
 from crewai import Crew
-from social_media_blog.agents.crew_agents import load_agents_from_yaml
-from social_media_blog.tasks.crew_tasks import load_tasks_from_yaml
-from social_media_blog.utils.prompt_loader import load_prompts
+from src.social_media_blog.agents.crew_agents import load_agents_from_yaml
+from src.social_media_blog.tasks.crew_tasks import load_tasks_from_yaml
+from src.social_media_blog.utils.prompt_loader import load_prompts
 
 
 

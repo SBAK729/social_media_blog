@@ -1,4 +1,4 @@
-from social_media_blog.utils.helper import (
+from src.social_media_blog.utils.helper import (
     load_documents, 
     text_split, 
     download_hugging_face_embeddings
