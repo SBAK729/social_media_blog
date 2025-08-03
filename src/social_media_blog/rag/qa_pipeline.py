@@ -3,7 +3,7 @@ import requests
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain.chains import RetrievalQA
-from social_media_blog.rag.chroma_loader import load_chroma_db
+from src.social_media_blog.rag.chroma_loader import load_chroma_db
 # from social_media_blog.utils.helper import download_hugging_face_embeddings
 # from social_media_blog.rag.serper_fallback import search_web
 

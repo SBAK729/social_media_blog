@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException, Request
-from social_media_blog.dispatcher import handle_user_query
+from src.social_media_blog.dispatcher import handle_user_query
 from pydantic import BaseModel
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware
