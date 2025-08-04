@@ -12,3 +12,4 @@ chromadb
 langchain 
 sentence-transformers
 langchain-groq
+slowapi

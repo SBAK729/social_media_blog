@@ -1,9 +1,11 @@
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 from fastapi import FastAPI, HTTPException, Request
 from src.social_media_blog.dispatcher import handle_user_query
 from pydantic import BaseModel
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware
-
 
 
 app = FastAPI(
@@ -20,7 +22,7 @@ class CrewOutput(BaseModel):
 
 origins = [
     "http://localhost:3000",  # React/Vue local dev
-    "http://127.0.0.1:3000",
+    "https://story-loom-gsmw.vercel.app",
     "https://my-project-iota-coral-41.vercel.app"
 ]
 
@@ -29,12 +31,21 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins, 
     allow_credentials=True,
-    allow_methods=["*"], 
+    allow_methods=["POST"], 
     allow_headers=["*"], 
 )
 
 
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+
+@app.middleware("http")
+async def rate_limit_middleware(request: Request, call_next):
+    response = await limiter.middleware(request, call_next)
+    return response
+
 @app.post("/api/generate-blog", response_model=CrewOutput)
+@limiter.limit("4/minute")
 async def generate_blog(query_input: QueryInput):
     try:
         response = handle_user_query(query_input.query)
