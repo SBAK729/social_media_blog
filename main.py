@@ -21,7 +21,7 @@ class CrewOutput(BaseModel):
 origins = [
     "http://localhost:3000",  # React/Vue local dev
     "http://127.0.0.1:3000",
-    "https://frontend-domain.com"
+    "https://my-project-iota-coral-41.vercel.app"
 ]
 
 # Add CORS middleware
