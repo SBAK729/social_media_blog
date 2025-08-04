@@ -1,6 +1,6 @@
-from slowapi import Limiter
-from slowapi.util import get_remote_address
-from slowapi.errors import RateLimitExceeded
+# from slowapi import Limiter
+# from slowapi.util import get_remote_address
+# from slowapi.errors import RateLimitExceeded
 from fastapi import FastAPI, HTTPException, Request
 from src.social_media_blog.dispatcher import handle_user_query
 from pydantic import BaseModel
@@ -36,16 +36,17 @@ app.add_middleware(
 )
 
 
-limiter = Limiter(key_func=get_remote_address)
-app.state.limiter = limiter
+# limiter = Limiter(key_func=get_remote_address)
+# app.state.limiter = limiter
 
-@app.middleware("http")
-async def rate_limit_middleware(request: Request, call_next):
-    response = await limiter.middleware(request, call_next)
-    return response
+# @app.middleware("http")
+# async def rate_limit_middleware(request: Request, call_next):
+#     response = await limiter.middleware(request, call_next)
+#     return response
+
+# @limiter.limit("4/minute")
 
 @app.post("/api/generate-blog", response_model=CrewOutput)
-@limiter.limit("4/minute")
 async def generate_blog(query_input: QueryInput):
     try:
         response = handle_user_query(query_input.query)
