@@ -1,6 +1,6 @@
 
 
-from social_media_blog.utils.extract import extract_context_entities
+from src.social_media_blog.utils.extract import extract_context_entities
 from src.social_media_blog.rag.qa_pipeline import answer_question, search_and_generate_answer
 from src.social_media_blog.crew import run_crew_with_context
 from langchain.schema import HumanMessage
