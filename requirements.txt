@@ -11,3 +11,4 @@ tiktoken>=0.5.1
 chromadb 
 langchain 
 sentence-transformers
+langchain-groq
