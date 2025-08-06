@@ -1,54 +1,131 @@
-# SocialMediaBlog Crew
 
-Welcome to the SocialMediaBlog Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+````md
+# 🧠 Social Media Blog - Agentic Content Generation System
 
-## Installation
+Welcome to **Social Media Blog**, a fully orchestrated multi-agent content generation system powered by **CrewAI** and deployed with **FastAPI**. This intelligent backend generates high-quality, trend-driven blog content through collaborative agents, delivering a storytelling experience shaped by automation and AI creativity.
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## 🚀 Live Project Links
 
-First, if you haven't already, install uv:
+- 🔗 **GitHub Repo:** [https://github.com/SBAK729/social_media_blog](https://github.com/SBAK729/social_media_blog)
+- 🌐 **Live API Deployment:** [https://social-media-blog-0aw9.onrender.com](https://social-media-blog-0aw9.onrender.com)
+- 📝 **Frontend Site:** [https://story-loom-gsmw.vercel.app](https://story-loom-gsmw.vercel.app)
+
+---
+
+## 🧩 Features
+
+### ✅ Agentic System via CrewAI
+- **TrendHunterAgent:** Finds hot and relevant blog topics using real-time data.
+- **WriterAgent:** Crafts engaging content based on topic and context.
+- **EditorAgent:** Refines tone, structure, and readability.
+- **SummarizingAgent:** Generates blog summaries and meta descriptions.
+
+### ✅ Fully Orchestrated Workflow
+- CrewAI coordination for step-by-step task execution
+- Seamless agent collaboration and result passing
+- Logs for agent decisions and reasoning paths
+
+### ✅ RAG with Vector Database
+- **ChromaDB** used for topic/document embedding
+- Semantic similarity search using OpenAI/Gemini embeddings
+- Context-aware writing using embedded chunks
+
+### ✅ FastAPI Backend
+- RESTful endpoint: `POST /api/generate-blog`
+- Customization: tone, platform guidelines, manual/auto topic input
+- Swagger UI enabled for testing (`/docs`)
+- Full CORS and rate-limiting support
+- Dockerized and ready for cloud deployment
+
+---
+
+## 🧪 API Usage
+
+### 🔥 POST `/api/generate-blog`
+
+
+---
+
+## 📦 How to Run Locally
 
 ```bash
-pip install uv
+# Clone the repo
+git clone https://github.com/SBAK729/social_media_blog.git
+cd social_media_blog
+
+# Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set environment variables
+cp .env.example .env  # Then fill in keys
+
+# Run the app
+uvicorn app.main:app --reload
 ```
 
-Next, navigate to your project directory and install the dependencies:
+Then visit: `http://localhost:8000/docs` to test the API via Swagger UI.
 
-(Optional) Lock the dependencies and install them by using the CLI command:
+---
+
+## 🐳 Docker Setup
+
 ```bash
-crewai install
-```
-### Customizing
+# Build the container
+docker build -t social-blog-api .
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/social_media_blog/config/agents.yaml` to define your agents
-- Modify `src/social_media_blog/config/tasks.yaml` to define your tasks
-- Modify `src/social_media_blog/crew.py` to add your own logic, tools and specific args
-- Modify `src/social_media_blog/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
+# Run the container
+docker run -d -p 8000:8000 --env-file .env social-blog-api
 ```
 
-This command initializes the social_media_blog Crew, assembling the agents and assigning them tasks as defined in your configuration.
+---
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+## 🧠 Agent Design & Workflow
 
-## Understanding Your Crew
+* Each agent uses a dedicated structured prompt with role-specific instructions.
+* CrewAI coordinates the interaction and retry logic.
+* Memory and output logging are enabled for traceability and debugging.
 
-The social_media_blog Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+---
 
-## Support
+## 🔍 Retrieval-Augmented Generation (RAG)
 
-For support, questions, or feedback regarding the SocialMediaBlog Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+* Embedded knowledge snippets from past blog posts or reference content
+* Integrated semantic retrieval for context injection
+* Dynamic fallback to LLM-only generation if vector store is empty
 
-Let's create wonders together with the power and simplicity of crewAI.
+---
+
+## 🔐 Security & Error Handling
+
+* Input validation via Pydantic models
+* CORS configured for frontend use
+* Graceful fallbacks on LLM errors or retrieval failures
+* Logging and audit trail for all agent actions
+
+---
+
+## 🧪 Postman Collection
+
+A full Postman collection is available to test endpoints locally or after deployment.
+
+> 📁 *Add `/docs` URL or link to exported Postman collection here if required*
+
+---
+
+## 🌍 Deployment
+
+This app is fully containerized and can be deployed on:
+
+* ✅ Render
+* ✅ Railway
+* ✅ AWS EC2 or ECS
+* ✅ GCP Cloud Run
+
+Set environment variables (e.g., `GEMINI_API_KEY`, `MODEL_PROVIDER`, `CHROMADB_PATH`) in your cloud dashboard.
+
+
+
